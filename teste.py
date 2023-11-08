@@ -1,12 +1,21 @@
 import psycopg2
 
-con = psycopg2.connect(host='dpg-cl3coj1novjs73bg3gn0-a.oregon-postgres.render.com', database='loginuserflaskrene',
-user='loginuserflaskrene_user', password='mXvVoPjsfETzCxaamaqFw6f8PEa0wYKG')
+con = psycopg2.connect(host='dpg-cl5roh56fh7c73eu61hg-a.oregon-postgres.render.com', database='servicewebrene2',
+user='servicewebrene2_user', password='hLTYAaa3l0YOM2LC41SWgLKNq9SuRnsp')
 
-cur = con.cursor()
 
-sql = "insert into usuarios values (3,'zeze88@gmail.com','minhasenha2')"
-cur.execute(sql)
-con.commit()
 
-con.close()
+def teste1(conexao):
+    cur = conexao.cursor()
+    try:
+        cur.execute("insert into users values ('tata@gmail.com','tata123', 'tata')")
+    except psycopg2.IntegrityError:
+        print('erro integ')
+        conexao.rollback()
+    else:
+        print('comitou')
+        conexao.commit()
+
+    conexao.close()
+
+teste1(con)

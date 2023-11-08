@@ -88,3 +88,7 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+.error-message {
+  color: #fff; /* Define a cor do texto como branco */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
