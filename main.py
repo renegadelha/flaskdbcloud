@@ -5,7 +5,7 @@ from flask import *
 from dao import *
 
 app = Flask(__name__)
-
+app.secret_key = 'ajshdgah123'
 @app.route("/")
 def home():
     return render_template('index.html')
@@ -22,7 +22,8 @@ def login():
 
     for usuario in tupla:
         if(login == usuario[0] and senha == usuario[1]):
-            return '<h1>LOGIN REALIZADO COM SUCESSO</h1>'
+            session['usuario'] = login
+            return render_template('menu.html', usuario=login)
 
     return render_template('errologin.html')
 
