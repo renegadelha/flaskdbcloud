@@ -21,13 +21,15 @@
 
 			<div class="signup">
 
-					<label for="chk" aria-hidden="true">Menu</label>
+				<label for="chk" aria-hidden="true">Menu</label>
 
-				<a style="color:white">{{usuario}}</a>
-				<br>
-				<a href="/cadastrarnoticia">Cadastrar notícia</a>
-				<a href="/listarnoticia">Listar notícias</a>
+				<form action="/inserirnoticia" method="post">
+					<input type="text" name="titulo">
+					<textarea name="texto"></textarea>
+					<br>
+					<button type="submit">Enviar</button>
 
+				</form>
 
 			</div>
 

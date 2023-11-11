@@ -9,3 +9,4 @@ MarkupSafe
 packaging
 psycopg2
 Werkzeug
+python-decouple

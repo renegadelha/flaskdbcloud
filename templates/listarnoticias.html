@@ -23,10 +23,14 @@
 
 					<label for="chk" aria-hidden="true">Menu</label>
 
-				<a style="color:white">{{usuario}}</a>
-				<br>
-				<a href="/cadastrarnoticia">Cadastrar notícia</a>
-				<a href="/listarnoticia">Listar notícias</a>
+				<a style="color:white">NOTICIAS DE {{usuario}}</a>
+				<br><br><br>
+				{% for noticia in listanoticias %}
+					<h2 style="color:white">{{noticia[1]}}</h2>
+					<h3 style="color:white">{{noticia[2]}}</h3>
+					<br>
+				{% endfor %}
+
 
 
 			</div>
